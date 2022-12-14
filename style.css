@@ -1,0 +1,106 @@
+body{
+    color: white;
+    background-color: black;
+}
+
+/* Sticky Nav bar */
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+
+.major_container{
+    height: 90%;
+}
+
+#listHolder{
+    display: flex;
+    /* background-color: rgb(98, 168, 73); */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.individual_character{
+    width: 250px;
+    height: 325px;
+    background-color: rgb(32 0 0);
+    border-radius: 20px;
+    /* background-color: rgb(68 69 56); */
+    /* background-image: linear-gradient(45deg, #704747, transparent); */
+    background-image: linear-gradient(180deg,transparent,#ab1b1b91, #d40303, transparent);
+    margin: 4px;
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid red; */
+    /* border: 0; */
+    border-bottom: 1px solid red;
+}
+
+.character_thumb_container{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.character_thumb{
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 20px 4px #ca0000; */
+    object-fit: fill;
+}
+
+.label_container{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.character_name{
+    width: 70%;
+    padding: 10px;
+    font-size: 16pt;
+    font-family: 'Rubik 80s Fade', cursive;
+}
+
+.fav_thumb{
+    width: 18%;
+    padding-right: 4px;
+}
