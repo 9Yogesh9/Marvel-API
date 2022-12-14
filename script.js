@@ -6,6 +6,7 @@ const fav_icon = "./assests/heart-selected.svg";
 
 // Different URL and there variables to be used
 let getCharacters = "http://gateway.marvel.com/v1/public/characters?";
+let getCharacterDetails = "https://gateway.marvel.com:443/v1/public/characters/";
 let getFilteredCharacters = "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=";
 
 let listHolder = document.getElementById("listHolder");
@@ -24,15 +25,16 @@ function fetchMaster(URL = (getCharacters + limit10 + keys)) {
 
 // to run onload 
 fetchMaster();
-// let holder = "";
+let holder = "";
 
 function print_characters(fetch_characters) {
 
     let results = fetch_characters.data.results;
-    // holder = fetch_characters;
+    holder = fetch_characters;
     if (results.length != 0) {
         listHolder.innerHTML = "";
         for (r of results) {
+            let ele_link = `${getCharacterDetails}${r.id}?${keys}`;
             let li_item = document.createElement('div');
 
             let character_thumb = `<div class="character_thumb_container"><img src="${r.thumbnail.path}.${r.thumbnail.extension}" class="character_thumb" alt="" srcset=""></div>`
@@ -40,11 +42,11 @@ function print_characters(fetch_characters) {
             let fav_button = `<div class="fav_thumb"><img src="${notfav_icon}" alt="" srcset="" id="img_${r.id}" onclick="addToFav(${r.id})">
         </div></div>`
 
-            let character_div = `<div class="individual_character"> 
+            let character_div = `<a href="${ele_link}" target="_blank" ><div class="individual_character"> 
         ${character_thumb}
         ${character_name}
         ${fav_button}
-        </div>`;
+        </div></a>`;
 
             li_item.innerHTML = character_div;
 
@@ -58,14 +60,20 @@ function print_characters(fetch_characters) {
 }
 
 let search_text = document.getElementById('search_text');
+let previous_search_value = "";
 
 function show_results() {
-    let search_value = search_text.value;
-    // console.log(`${getFilteredCharacters}${search_value}&${keys}`);
-    if (search_value)
-        fetchMaster(`${getFilteredCharacters}${search_value}&${keys}`);
-    else
-        alert("Please Enter a valid value !");
+    // Run only if search box value changes this will reduce the overhead caused by multiple calls to fetch same information on page 
+    if (previous_search_value != search_text.value) {
+        let search_value = search_text.value;
+        // console.log(`${getFilteredCharacters}${search_value}&${keys}`);
+        if (search_value){
+            fetchMaster(`${getFilteredCharacters}${search_value}&${keys}`);
+            previous_search_value = search_value;
+        }
+        else
+            alert("Please Enter a valid value !");
+    }
 }
 
 // Will be adding characters to the fav array

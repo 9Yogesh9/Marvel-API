@@ -3,45 +3,57 @@ body{
     background-color: black;
 }
 
-/* Sticky Nav bar */
-#navbar {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  /* Navbar links */
-  #navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
+a{
+    color: white;
     text-decoration: none;
-  }
-  
-  /* Page content */
-  .content {
-    padding: 16px;
-  }
-  
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
-  }
+}
 
+#top_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#logo_container{
+    width: 6%;
+}
+
+#logo{
+    width: 90%;
+    object-fit: fill;
+}
+
+#search_text{
+    outline: none;
+    width: 70%;
+    border-radius: 5px;
+    font-family: 'Rubik Vinyl', cursive;
+    background-color: #deb88700;
+    font-size: 18pt;
+    /* background-image: linear-gradient(45deg, #ff0000, #ff000000); */
+    color: white;
+    border: 0;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+
+#tosearch{
+    background-color: transparent;
+    color: red;
+    font-size: 18pt;
+    font-family: cursive;
+}
+
+#tosearch:hover{
+    cursor: pointer;
+}
 
 .major_container{
     height: 90%;
 }
 
 #listHolder{
+    margin: 4px;
     display: flex;
     /* background-color: rgb(98, 168, 73); */
     flex-direction: row;
