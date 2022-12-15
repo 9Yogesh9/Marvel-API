@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#top_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fffffff0;
+    align-content: center;
+    width: 100%;
+}
+
+#logo_container {
+    padding: 4px;
+    width: 100px;
+}
+
+#logo {
+    width: 90%;
+    object-fit: fill;
+}
+
+#master_container {
+    margin-top: 10vh;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.left_container {
+    width: 400px;
+    /* width: 50%; */
+    /* height: 100%; */
+    /* height: 100vw; */
+    /* background-color: yellow; */
+}
+
+.thumb_container {
+    margin: auto;
+    width: 350px;
+    height: 450px;
+    /* background-color: #632f2fd1; */
+}
+
+.character_thumb_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character_thumb{
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 11px #ca0000;
+    object-fit: fill;
+}
+
+#name_align{
+    text-align: center;
+}
+
+#char_name{
+    text-shadow: -1px -4px 8px red;;
+}
+
+.right_container {
+    width: 800px;
+    height: 450px;
+    overflow-y: auto;
+    padding-left: 10px;
+    /* background-color: greenyellow; */
+}
+
+@media only screen and (max-width: 1220px) {
+    .right_container{
+        width: 350px;
+    }
+  }
