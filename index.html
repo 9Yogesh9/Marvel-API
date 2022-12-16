@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap');
@@ -31,11 +29,13 @@
         </div>
         <input type="text" name="search" id="search_text" placeholder="Type to search..." required>
         <button type="submit" id="tosearch" onclick="show_results()">Search</button>
-        <button type="button" id="micro_fav_btn">FAV- 
-            <div id="micro_icon"> 
-                <img src="./assests/images/M-favicon.png" alt="" srcset=""> 
-            </div> 
-        </button>
+        <a href="./favourites.html" target="_blank">
+            <button type="button" id="micro_fav_btn"> FAV-
+                <div id="micro_icon">
+                    <img src="./assests/images/M-favicon.png" alt="" srcset="">
+                </div>
+            </button>
+        </a>
     </div>
     <div class="major_container">
         <div id="listHolder">
