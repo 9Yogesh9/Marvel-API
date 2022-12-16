@@ -36,11 +36,12 @@ function print_characters(fetch_characters) {
         for (r of results) {
             let ele_link = `./details.html?ch_id=${r.id}`;
             let li_item = document.createElement('div');
+            let thumb_link = `${r.thumbnail.path}.${r.thumbnail.extension}`.replace('http','https');
 
-            let character_thumb = `<div class="character_thumb_container"><img src="${r.thumbnail.path}.${r.thumbnail.extension}" class="character_thumb" alt="" srcset=""></div>`
+            let character_thumb = `<div class="character_thumb_container"><img src="${thumb_link}" class="character_thumb" alt="" srcset=""></div>`
             let character_name = `<div class="label_container"><p class="character_name">${r.name}</p>`;
             let fav_button = `<div class="fav_thumb" id="fav_thumb_${r.id}">
-            <img src="${notfav_icon}" alt="" srcset="" onclick="addToFav(${r.id},'${r.name}','${r.thumbnail.path}.${r.thumbnail.extension}')">
+            <img src="${notfav_icon}" alt="" srcset="" onclick="addToFav(${r.id},'${r.name}','(${thumb_link})')">
         </div></div>`
 
             let character_div = `<div class="individual_character"> 
