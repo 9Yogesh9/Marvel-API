@@ -28,7 +28,7 @@ function print_character(ch_data) {
         data = ch_data.data.results[0];
         thumb_container.innerHTML = "";
         right_container.innerHTML = "";
-        let thumb_link = `${r.thumbnail.path}.${r.thumbnail.extension}`.replace('http','https');
+        let thumb_link = `${data.thumbnail.path}.${data.thumbnail.extension}`.replace('http','https');
 
         // Setting image of the character
         let character_thumb = `<div class="character_thumb_container"><img src="${thumb_link}" class="character_thumb" alt="" srcset=""></div>`
