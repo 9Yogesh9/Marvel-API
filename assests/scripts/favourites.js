@@ -50,4 +50,7 @@ function removeFav(charac_id) {
     let grab_fav_character = document.getElementById(`card_${charac_id}`);
     localStorage.removeItem(charac_id);
     grab_fav_character.remove();
+    if(localStorage.length == 0){
+        listHolder.innerHTML = "<h1> Bit Surprised ! No Favourite Superheros </h1>";
+    }
 }

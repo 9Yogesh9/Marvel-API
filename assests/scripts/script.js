@@ -36,7 +36,7 @@ function print_characters(fetch_characters) {
         for (r of results) {
             let ele_link = `./details.html?ch_id=${r.id}`;
             let li_item = document.createElement('div');
-            let thumb_link = `${r.thumbnail.path}.${r.thumbnail.extension}`.replace('http','https');
+            let thumb_link = `${r.thumbnail.path}.${r.thumbnail.extension}`.replace('http', 'https');
 
             let character_thumb = `<div class="character_thumb_container"><img src="${thumb_link}" class="character_thumb" alt="" srcset=""></div>`
             let character_name = `<div class="label_container"><p class="character_name">${r.name}</p>`;
@@ -58,9 +58,9 @@ function print_characters(fetch_characters) {
     }
 
     // Mark the favorites
-    for( a in localStorage){
+    for (a in localStorage) {
         let ele = document.getElementById(`fav_thumb_${a}`);
-        if(ele){
+        if (ele) {
             ele.classList.add('fav_container_selected');
         }
     }
@@ -90,16 +90,20 @@ function show_results() {
 function addToFav(charac_id, charac_name, charac_thumb) {
 
     let grab_fav_container = document.getElementById(`fav_thumb_${charac_id}`);
-    grab_fav_container.classList.toggle('fav_container_selected');
+    // grab_fav_container.classList.toggle('fav_container_selected');
 
-    if(!localStorage.getItem(charac_id)){
+    if (!localStorage.getItem(charac_id)) {
         let obj = {
-            "id":charac_id,
-            "name":charac_name,
-            "thumb":charac_thumb
+            "id": charac_id,
+            "name": charac_name,
+            "thumb": charac_thumb
         }
         localStorage.setItem(charac_id, JSON.stringify(obj));
-    }else{
+        grab_fav_container.classList.add('fav_container_selected');
+
+    } else {
         localStorage.removeItem(charac_id);
+        grab_fav_container.classList.remove('fav_container_selected');
+
     }
 }
