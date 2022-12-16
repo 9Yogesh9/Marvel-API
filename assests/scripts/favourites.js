@@ -7,12 +7,15 @@ function listAppend(inside_list) {
     listHolder.appendChild(inside_list);
 }
 
+// Renders the local data NO API CALL IS BEEN MADE to reduce overhead
 function print_characters() {
+
     let data_holder = localStorage;
+
     if (data_holder.length != 0) {
         listHolder.innerHTML = "";
         for (d in data_holder) {
-            if(d == 'length'){
+            if (d == 'length') {
                 break;
             }
 

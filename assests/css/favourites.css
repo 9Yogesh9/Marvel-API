@@ -46,7 +46,6 @@ a {
 #listHolder {
     margin-top: 5px;
     display: flex;
-    /* background-color: rgb(98, 168, 73); */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -77,7 +76,6 @@ a {
     width: 90%;
     height: 90%;
     border-radius: 5px;
-    /* box-shadow: 0px 0px 20px 4px #ca0000; */
     object-fit: fill;
 }
 

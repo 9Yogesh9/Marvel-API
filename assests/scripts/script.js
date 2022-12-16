@@ -3,9 +3,8 @@ const keys = "ts=1670913383902&apikey=edc9531ea872c74a2855ed93a5903229&hash=bbb5
 const limit10 = "limit=10&";
 const offset = `offset=${Math.round(Math.random() * 100)}&`; //Randomizing the homepage results
 const notfav_icon = "./assests/images/heart-unselected.svg";
-// const fav_icon = "./assests/images/heart-selected.svg";
 
-// Different URL and there variables to be used
+// Different URL (APIs) to be used
 let getCharacters = "http://gateway.marvel.com/v1/public/characters?";
 let getFilteredCharacters = "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=";
 
@@ -26,13 +25,12 @@ function fetchMaster(URL = (getCharacters + limit10 + offset + keys)) {
 
 // to run onload 
 fetchMaster();
-// To hold the fetched data
-let data_holder = "";
 
+// Function to print the fetched data
 function print_characters(fetch_characters) {
 
     let results = fetch_characters.data.results;
-    data_holder = results;
+
     if (results.length != 0) {
         listHolder.innerHTML = "";
         for (r of results) {
@@ -70,26 +68,28 @@ function print_characters(fetch_characters) {
 let search_text = document.getElementById('search_text');
 let previous_search_value = "";
 
-// Fetech the results using search term
+// Fetch the results using search term
 function show_results() {
+
     // Run only if search box value changes this will reduce the overhead caused by multiple calls to fetch same information on page 
     if (previous_search_value != search_text.value) {
+
         let search_value = search_text.value;
-        // console.log(`${getFilteredCharacters}${search_value}&${keys}`);
         if (search_value) {
             fetchMaster(`${getFilteredCharacters}${search_value}&${keys}`);
             previous_search_value = search_value;
         }
         else
             alert("Please Enter a valid value !");
+
     }
 }
 
 // Will be adding characters to the fav array
 function addToFav(charac_id, charac_name, charac_thumb) {
+
     let grab_fav_container = document.getElementById(`fav_thumb_${charac_id}`);
     grab_fav_container.classList.toggle('fav_container_selected');
-    // console.log(charac_id);
 
     if(!localStorage.getItem(charac_id)){
         let obj = {

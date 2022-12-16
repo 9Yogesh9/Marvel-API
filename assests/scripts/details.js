@@ -5,12 +5,10 @@ let getCharacterDetails = "https://gateway.marvel.com:443/v1/public/characters/"
 let key_values = window.location.search;
 const urlParams = new URLSearchParams(key_values);
 const char_id = urlParams.get('ch_id');
-console.log("Character ID :", char_id);
 
 let URL = `${getCharacterDetails}${char_id}?${keys}`;
 
 function fetchMaster(URL) {
-    console.log("fetchMaster details intiated !", URL);
     fetch(URL)
         .then((response) => response.json())
         .then((data) => print_character(data));
@@ -24,7 +22,7 @@ let thumb_container = document.getElementsByClassName('thumb_container')[0];
 let right_container = document.getElementsByClassName('right_container')[0];
 
 function print_character(ch_data) {
-    // console.log(JSON.stringify(data));
+
     let data = ch_data.data.results;
     if (data.length != 0) {
         data = ch_data.data.results[0];
