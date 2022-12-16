@@ -5,7 +5,7 @@ const offset = `offset=${Math.round(Math.random() * 100)}&`; //Randomizing the h
 const notfav_icon = "./assests/images/heart-unselected.svg";
 
 // Different URL (APIs) to be used
-let getCharacters = "http://gateway.marvel.com/v1/public/characters?";
+let getCharacters = "https://gateway.marvel.com/v1/public/characters?";
 let getFilteredCharacters = "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=";
 
 let listHolder = document.getElementById("listHolder");
