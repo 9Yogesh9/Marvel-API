@@ -1,6 +1,6 @@
 # Marvel-API
 
-Marvel-API explorer with features:
+Marvel-API explorer with features: <a href="https://9yogesh9.github.io/Marvel-API/">Live Demo</a>
 
   <ol>
     <li>Fetch characters from marvel.</li>
@@ -24,5 +24,6 @@ List of APIs Used :
     <small> This method fetches a single character resource. It is the canonical URI for any character resource provided by the API. </small>
   </ol>
 
-Marvel api is copyright of © 2022 MARVEL.<br>
+<a href="https://9yogesh9.github.io/Marvel-API/">Click Here !</a> To explore the world of Marvel. <br>
+Marvel api is copyright of © 2022 MARVEL. <br>
 <a href="http://marvel.com">Data provided by Marvel. © 2022 MARVEL</a>
